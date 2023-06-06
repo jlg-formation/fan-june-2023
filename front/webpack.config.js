@@ -1,12 +1,12 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = function (_, args) {
   const mode = args.mode || "production";
   return {
     mode: mode,
-    entry: "./src/main.js",
     output: {
       clean: true,
       filename: "bundle.js",
@@ -20,12 +20,13 @@ module.exports = function (_, args) {
       new CopyPlugin({
         patterns: [{ from: "src/assets", to: "assets" }],
       }),
+      new MiniCssExtractPlugin(),
     ],
     module: {
       rules: [
         {
           test: /\.css$/i,
-          use: ["style-loader", "css-loader"],
+          use: [MiniCssExtractPlugin.loader, "css-loader"],
         },
         {
           test: /\.html$/i,
