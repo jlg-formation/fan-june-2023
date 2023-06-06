@@ -7,10 +7,15 @@ module.exports = function (_, args) {
   const mode = args.mode || "production";
   return {
     mode: mode,
-    entry: "./src/main.js",
+    // entry: "./src/main.js",
+    entry: {
+      main: {
+        import: "./src/main.js",
+      },
+    },
     output: {
       clean: true,
-      filename: "bundle.js",
+      filename: "[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
     },
     devtool: mode === "development" ? "source-map" : false,

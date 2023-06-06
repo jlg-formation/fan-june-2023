@@ -1,5 +1,3 @@
-import "angular";
-
 import appHtml from "./app/app.component.html";
 
 import "./layout/layout";
