@@ -1,5 +1,7 @@
 @use "./scss/layout.scss";
 @use "./scss/button.scss";
+@use "./scss/table.scss";
+@use "./scss/form.scss";
 
 * {
   box-sizing: border-box;
@@ -38,5 +40,15 @@ main {
 
   p {
     align-self: stretch;
+  }
+}
+
+div.content {
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
+  nav {
+    display: flex;
+    gap: 0.3em;
   }
 }
