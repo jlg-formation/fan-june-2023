@@ -1,15 +1,23 @@
+import layoutHeaderHtml from "./layout-header/layout-header.component.html";
+
 const app = angular.module("layout", []);
 
-app.config(function ($rootScopeProvider) {
-  console.log("config layout");
-});
-app.run(function ($rootScope) {
-  console.log("$rootScope: ", $rootScope);
-  console.log("run layout");
-});
+app.config([
+  "$rootScopeProvider",
+  function ($rootScopeProvider) {
+    console.log("config layout");
+  },
+]);
+app.run([
+  "$rootScope",
+  function ($rootScope) {
+    console.log("$rootScope: ", $rootScope);
+    console.log("run layout");
+  },
+]);
 
 app.component("layoutHeader", {
-  templateUrl: "./layout/layout-header/layout-header.component.html",
+  template: layoutHeaderHtml,
 });
 
 app.component("layoutBody", {
