@@ -12,7 +12,7 @@
   });
 
   app.component("layoutHeader", {
-    template: "<p>Header works!</p>",
+    templateUrl: "./layout/layout-header/layout-header.component.html",
   });
 
   app.component("layoutBody", {
