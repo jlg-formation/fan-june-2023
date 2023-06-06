@@ -53,9 +53,9 @@ module.exports = function (_, args) {
       compress: true,
       port: 9000,
       historyApiFallback: true,
-      proxy: {
-        "/articles": "http://localhost:3000",
-      },
+      // proxy: {
+      //   "/articles": "http://localhost:3000",
+      // },
     },
     performance: {
       hints: false,
