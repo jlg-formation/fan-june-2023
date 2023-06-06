@@ -10,6 +10,7 @@ import "./layout/layout";
 import "./style.scss";
 
 var app = angular.module("myApp", ["layout", "ngRoute"]);
+console.log("myApp created");
 app.config([
   "$routeProvider",
   "$locationProvider",

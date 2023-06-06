@@ -7,8 +7,10 @@ module.exports = function (_, args) {
   const mode = args.mode || "production";
   return {
     mode: mode,
-    // entry: "./src/main.js",
     entry: {
+      angular: "angular",
+      angularRoute: "angular-route",
+      vendors: "./src/vendors",
       main: {
         import: "./src/main.js",
       },
@@ -22,12 +24,13 @@ module.exports = function (_, args) {
     plugins: [
       new HtmlWebpackPlugin({
         template: "./src/index.html",
+        scriptLoading: "blocking",
       }),
       new CopyPlugin({
         patterns: [{ from: "src/assets", to: "assets" }],
       }),
       new MiniCssExtractPlugin({
-        filename: "style.css",
+        filename: "[name].style.css",
       }),
     ],
     module: {
@@ -50,12 +53,12 @@ module.exports = function (_, args) {
       static: {
         directory: path.join(__dirname, "dist"),
       },
-      compress: true,
+      compress: false,
       port: 9000,
       historyApiFallback: true,
-      // proxy: {
-      //   "/articles": "http://localhost:3000",
-      // },
+      proxy: {
+        "/api/articles": "http://localhost:3000",
+      },
     },
     performance: {
       hints: false,
