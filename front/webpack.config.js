@@ -7,6 +7,7 @@ module.exports = function (_, args) {
   const mode = args.mode || "production";
   return {
     mode: mode,
+    entry: "./src/main.js",
     output: {
       clean: true,
       filename: "bundle.js",
