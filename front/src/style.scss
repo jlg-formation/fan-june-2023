@@ -1,5 +1,6 @@
-header {
-  img {
-    height: 2.5em;
-  }
+@use "./scss/layout.scss";
+
+body {
+  margin: 0;
+  font-family: sans-serif;
 }

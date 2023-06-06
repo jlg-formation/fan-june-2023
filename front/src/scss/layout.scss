@@ -1,0 +1,57 @@
+app {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  justify-content: space-between;
+
+  layout-body {
+    flex: 1;
+  }
+
+  header {
+    padding: 0 0.5em;
+    background-color: #eee;
+    height: 3em;
+    display: flex;
+    align-items: center;
+
+    a {
+      text-decoration: inherit;
+      color: inherit;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+
+      span {
+        font-size: 1.3em;
+        font-weight: bold;
+      }
+    }
+
+    img {
+      height: 2.5em;
+    }
+  }
+
+  footer {
+    background-color: #eee;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      text-decoration: inherit;
+      color: inherit;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

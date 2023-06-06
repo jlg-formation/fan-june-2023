@@ -1,4 +1,5 @@
 import layoutHeaderHtml from "./layout-header/layout-header.component.html";
+import layoutFooterHtml from "./layout-footer/layout-footer.component.html";
 
 const app = angular.module("layout", []);
 
@@ -25,5 +26,5 @@ app.component("layoutBody", {
 });
 
 app.component("layoutFooter", {
-  template: "<p>Footer works!</p>",
+  template: layoutFooterHtml,
 });
