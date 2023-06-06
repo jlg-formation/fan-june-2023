@@ -2,7 +2,7 @@ import "angular";
 
 import "./layout/layout";
 
-import "./style.css";
+import "./style.scss";
 
 var app = angular.module("myApp", ["layout"]);
 app.config(function () {
