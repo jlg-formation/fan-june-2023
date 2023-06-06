@@ -6,6 +6,8 @@ app {
 
   layout-body {
     flex: 1;
+    display: flex;
+    flex-flow: column;
   }
 
   header {
