@@ -6,7 +6,7 @@ const api = require("./api");
 
 const app = express();
 const port = 3000;
-const publicDir = ".";
+const publicDir = "../front/dist";
 
 app.use((req, res, next) => {
   console.log("req: ", req.url, req.method);
