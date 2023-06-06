@@ -22,7 +22,7 @@ app.component("layoutHeader", {
 });
 
 app.component("layoutBody", {
-  template: "<p>Body works!</p>",
+  template: "<div ng-view></div>",
 });
 
 app.component("layoutFooter", {
