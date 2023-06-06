@@ -3,6 +3,14 @@
 
   const app = angular.module("layout", []);
 
+  app.config(function ($rootScopeProvider) {
+    console.log("config layout");
+  });
+  app.run(function ($rootScope) {
+    console.log("$rootScope: ", $rootScope);
+    console.log("run layout");
+  });
+
   app.component("layoutHeader", {
     template: "<p>Header works!</p>",
   });
