@@ -21,7 +21,9 @@ module.exports = function (_, args) {
       new CopyPlugin({
         patterns: [{ from: "src/assets", to: "assets" }],
       }),
-      new MiniCssExtractPlugin(),
+      new MiniCssExtractPlugin({
+        filename: "style.css",
+      }),
     ],
     module: {
       rules: [
