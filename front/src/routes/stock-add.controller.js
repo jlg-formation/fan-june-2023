@@ -6,5 +6,9 @@ export const StockAddCtrl = [
     $scope.name = "truc";
     $scope.price = 0;
     $scope.qty = 1;
+
+    $scope.submit = function () {
+      console.log("submit");
+    };
   },
 ];
