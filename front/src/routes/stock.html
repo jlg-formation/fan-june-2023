@@ -21,7 +21,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="a in articles track by a.id">
+        <tr
+          ng-repeat="a in articles track by a.id"
+          ng-click="select(a)"
+          ng-class="{selected: selectedArticles.has(a)}"
+        >
           <td class="name">{{ a.name }}</td>
           <td class="price">{{ a.price }} €</td>
           <td class="qty">{{ a.qty }}</td>

@@ -33,6 +33,7 @@ app.config([
           function ($scope, articleService) {
             console.log("articleService: ", articleService);
             console.log("controller ");
+            $scope.selectedArticles = new Set();
             articleService
               .getArticles()
               .then(function (articles) {
@@ -42,6 +43,16 @@ app.config([
               .catch((err) => {
                 console.log("err: ", err);
               });
+
+            $scope.select = function (article) {
+              console.log("select", article);
+              if ($scope.selectedArticles.has(article)) {
+                $scope.selectedArticles.delete(article);
+                return;
+              }
+              $scope.selectedArticles.add(article);
+              console.log("$scope.selectedArticles: ", $scope.selectedArticles);
+            };
           },
         ],
       })
