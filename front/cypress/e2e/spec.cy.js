@@ -1,5 +1,5 @@
 describe("template spec", () => {
-  it("passes", () => {
+  it("adds and removes an article", () => {
     cy.visit("http://localhost:9000");
 
     cy.contains("Gestion Stock");
@@ -17,5 +17,9 @@ describe("template spec", () => {
     cy.get("input").eq(2).clear().type("34");
 
     cy.contains("button", "Ajouter").click();
+
+    cy.contains("tbody tr td", name).click();
+
+    cy.get("button[title='Supprimer']").click();
   });
 });
