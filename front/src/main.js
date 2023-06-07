@@ -4,6 +4,7 @@ import homeHtml from "./routes/home.html";
 import legalHtml from "./routes/legal.html";
 import stockHtml from "./routes/stock.html";
 import stockAddHtml from "./routes/stock-add.html";
+import notFoundHtml from "./routes/not-found.html";
 
 import "./layout/layout";
 
@@ -87,6 +88,9 @@ app.config([
       .when("/stock/add", {
         template: stockAddHtml,
         controller: StockAddCtrl,
+      })
+      .otherwise({
+        template: notFoundHtml,
       });
 
     // configure html5 to get links working on jsfiddle
