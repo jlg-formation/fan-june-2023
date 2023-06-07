@@ -31,7 +31,9 @@ app.config([
             console.log("controller ");
             $http
               .get("http://localhost:3000/api/articles")
-              .then((articles) => {
+              .then((response) => {
+                const articles = response.data;
+                console.log("articles: ", articles);
                 $scope.articles = articles;
               })
               .catch((err) => {
