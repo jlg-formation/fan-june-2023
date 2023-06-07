@@ -1,6 +1,9 @@
+import { dirname } from "../misc";
+
 export const StockAddCtrl = [
   "$scope",
-  function StockAddCtrl($scope) {
+  "$location",
+  function StockAddCtrl($scope, $location) {
     console.log("ctrl stock add");
 
     $scope.name = "truc";
@@ -9,6 +12,9 @@ export const StockAddCtrl = [
 
     $scope.submit = function () {
       console.log("submit");
+      const path = $location.path();
+      const newPath = dirname(path);
+      $location.path(newPath);
     };
   },
 ];
