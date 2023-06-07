@@ -26,12 +26,17 @@ app.config([
         template: stockHtml,
         controller: [
           "$scope",
-          function ($scope) {
+          "$http",
+          function ($scope, $http) {
             console.log("controller ");
-            $scope.articles = [
-              { id: "a1", name: "Tournevis", price: 2.99, qty: 345 },
-              { id: "a2", name: "Pelle", price: 3.45, qty: 12 },
-            ];
+            $http
+              .get("http://localhost:3000/api/articles")
+              .then((articles) => {
+                $scope.articles = articles;
+              })
+              .catch((err) => {
+                console.log("err: ", err);
+              });
           },
         ],
       })
