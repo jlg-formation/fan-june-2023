@@ -24,6 +24,16 @@ app.config([
       })
       .when("/stock", {
         template: stockHtml,
+        controller: [
+          "$scope",
+          function ($scope) {
+            console.log("controller ");
+            $scope.articles = [
+              { id: "a1", name: "Tournevis", price: 2.99, qty: 345 },
+              { id: "a2", name: "Pelle", price: 3.45, qty: 12 },
+            ];
+          },
+        ],
       })
       .when("/stock/add", {
         template: stockAddHtml,

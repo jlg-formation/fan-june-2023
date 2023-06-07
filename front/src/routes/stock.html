@@ -21,25 +21,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="name">Tournevis</td>
-          <td class="price">1.23 €</td>
-          <td class="qty">100</td>
-        </tr>
-        <tr>
-          <td class="name">Pelle</td>
-          <td class="price">2.30 €</td>
-          <td class="qty">40</td>
-        </tr>
-        <tr>
-          <td class="name">Marteau</td>
-          <td class="price">3.45 €</td>
-          <td class="qty">2000</td>
-        </tr>
-        <tr>
-          <td class="name">Scie</td>
-          <td class="price">12.34 €</td>
-          <td class="qty">56</td>
+        <tr ng-repeat="a in articles track by a.id">
+          <td class="name">{{ a.name }}</td>
+          <td class="price">{{ a.price }} €</td>
+          <td class="qty">{{ a.qty }}</td>
         </tr>
       </tbody>
     </table>
