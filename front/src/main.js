@@ -53,6 +53,10 @@ app.config([
               $scope.selectedArticles.add(article);
               console.log("$scope.selectedArticles: ", $scope.selectedArticles);
             };
+
+            $scope.remove = function () {
+              console.log("remove");
+            };
           },
         ],
       })
