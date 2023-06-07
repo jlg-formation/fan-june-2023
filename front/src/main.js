@@ -10,6 +10,7 @@ import "./layout/layout";
 import "./style.scss";
 
 import { ArticleService } from "./services/article.service";
+import { StockAddCtrl } from "./routes/stock-add.controller";
 
 var app = angular.module("myApp", ["layout", "ngRoute"]);
 console.log("myApp created");
@@ -46,6 +47,7 @@ app.config([
       })
       .when("/stock/add", {
         template: stockAddHtml,
+        controller: StockAddCtrl,
       });
 
     // configure html5 to get links working on jsfiddle
