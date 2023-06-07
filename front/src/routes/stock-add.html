@@ -7,16 +7,16 @@
     </label>
     <label>
       <span>Prix</span>
-      <input type="text" />
+      <input type="number" ng-model="price" />
     </label>
     <label>
       <span>Quantité</span>
-      <input type="text" />
+      <input type="number" ng-model="qty" />
     </label>
     <button class="primary">
       <i class="fa-solid fa-plus"></i>
       <span>Ajouter</span>
     </button>
   </form>
-  {{ name }}
+  {{ {name, price, qty } }}
 </main>
