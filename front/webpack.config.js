@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -22,6 +23,9 @@ module.exports = function (_, args) {
     },
     devtool: mode === "development" ? "source-map" : false,
     plugins: [
+      new webpack.DefinePlugin({
+        isProd: mode === "production",
+      }),
       new HtmlWebpackPlugin({
         template: "./src/index.html",
         scriptLoading: "blocking",

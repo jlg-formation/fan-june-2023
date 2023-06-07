@@ -12,6 +12,10 @@ import "./style.scss";
 import { ArticleService } from "./services/article.service";
 import { StockAddCtrl } from "./routes/stock-add.controller";
 
+if (isProd) {
+  console.log = () => {};
+}
+
 var app = angular.module("myApp", ["layout", "ngRoute"]);
 console.log("myApp created");
 app.config([
