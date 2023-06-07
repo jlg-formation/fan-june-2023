@@ -34,15 +34,6 @@ app.config([
             console.log("articleService: ", articleService);
             console.log("controller ");
             $scope.selectedArticles = new Set();
-            articleService
-              .getArticles()
-              .then(function (articles) {
-                console.log("articles: ", articles);
-                $scope.articles = articles;
-              })
-              .catch((err) => {
-                console.log("err: ", err);
-              });
 
             $scope.select = function (article) {
               console.log("select", article);
@@ -74,7 +65,18 @@ app.config([
 
             $scope.refresh = function () {
               console.log("refresh");
+              articleService
+                .getArticles()
+                .then(function (articles) {
+                  console.log("articles: ", articles);
+                  $scope.articles = articles;
+                })
+                .catch((err) => {
+                  console.log("err: ", err);
+                });
             };
+
+            $scope.refresh();
           },
         ],
       })
