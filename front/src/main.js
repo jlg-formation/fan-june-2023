@@ -56,6 +56,20 @@ app.config([
 
             $scope.remove = function () {
               console.log("remove");
+              const ids = [...$scope.selectedArticles].map((a) => a.id);
+              articleService
+                .removeArticles(ids)
+                .then(() => {
+                  return articleService.getArticles();
+                })
+                .then(function (articles) {
+                  console.log("articles: ", articles);
+                  $scope.articles = articles;
+                  $scope.selectedArticles.clear();
+                })
+                .catch((err) => {
+                  console.log("err: ", err);
+                });
             };
           },
         ],
