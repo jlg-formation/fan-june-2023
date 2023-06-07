@@ -7,11 +7,11 @@ const articles = [
   { id: "a2", name: "Pelle", price: 3.45, qty: 12 },
 ];
 
-app.use("/date", (req, res) => {
+app.get("/date", (req, res) => {
   res.json({ date: new Date() });
 });
 
-app.use("/articles", (req, res) => {
+app.get("/articles", (req, res) => {
   res.json(articles);
 });
 

@@ -3,7 +3,8 @@ import { dirname } from "../misc";
 export const StockAddCtrl = [
   "$scope",
   "$location",
-  function StockAddCtrl($scope, $location) {
+  "articleService",
+  function StockAddCtrl($scope, $location, articleService) {
     console.log("ctrl stock add");
 
     $scope.name = "truc";
@@ -12,9 +13,22 @@ export const StockAddCtrl = [
 
     $scope.submit = function () {
       console.log("submit");
-      const path = $location.path();
-      const newPath = dirname(path);
-      $location.path(newPath);
+      const newArticle = {
+        name: $scope.name,
+        price: $scope.price,
+        qty: $scope.qty,
+      };
+
+      articleService
+        .addArticle(newArticle)
+        .then(() => {
+          const path = $location.path();
+          const newPath = dirname(path);
+          $location.path(newPath);
+        })
+        .catch((err) => {
+          console.log("err: ", err);
+        });
     };
   },
 ];
