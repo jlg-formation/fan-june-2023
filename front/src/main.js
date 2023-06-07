@@ -71,6 +71,10 @@ app.config([
                   console.log("err: ", err);
                 });
             };
+
+            $scope.refresh = function () {
+              console.log("refresh");
+            };
           },
         ],
       })
