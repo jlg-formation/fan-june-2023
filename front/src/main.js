@@ -28,15 +28,13 @@ app.config([
         template: stockHtml,
         controller: [
           "$scope",
-          "$http",
           "articleService",
-          function ($scope, $http, articleService) {
+          function ($scope, articleService) {
             console.log("articleService: ", articleService);
             console.log("controller ");
-            $http
-              .get("http://localhost:3000/api/articles")
-              .then((response) => {
-                const articles = response.data;
+            articleService
+              .getArticles()
+              .then(function (articles) {
                 console.log("articles: ", articles);
                 $scope.articles = articles;
               })
