@@ -13,8 +13,9 @@
       <span>Quantité</span>
       <input type="number" ng-model="qty" />
     </label>
-    <button class="primary">
-      <i class="fa-solid fa-plus"></i>
+    <button class="primary" ng-disabled="isAdding">
+      <i class="fa-solid fa-plus" ng-show="!isAdding"></i>
+      <i class="fa-solid fa-circle-notch fa-spin" ng-show="isAdding"></i>
       <span>Ajouter</span>
     </button>
   </form>
