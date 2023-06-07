@@ -9,6 +9,8 @@ import "./layout/layout";
 
 import "./style.scss";
 
+import { ArticleService } from "./services/article.service";
+
 var app = angular.module("myApp", ["layout", "ngRoute"]);
 console.log("myApp created");
 app.config([
@@ -27,7 +29,9 @@ app.config([
         controller: [
           "$scope",
           "$http",
-          function ($scope, $http) {
+          "articleService",
+          function ($scope, $http, articleService) {
+            console.log("articleService: ", articleService);
             console.log("controller ");
             $http
               .get("http://localhost:3000/api/articles")
@@ -56,3 +60,5 @@ app.run(function () {
 app.component("app", {
   template: appHtml,
 });
+
+app.service("articleService", ArticleService);
