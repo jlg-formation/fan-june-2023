@@ -3,7 +3,7 @@ const crypto = require("crypto");
 
 const app = express.Router();
 
-const articles = [
+let articles = [
   { id: "a1", name: "Tournevis", price: 2.99, qty: 345 },
   { id: "a2", name: "Pelle", price: 3.45, qty: 12 },
 ];
@@ -23,6 +23,13 @@ app.post("/articles", (req, res) => {
   const article = { ...newArticle, id: crypto.randomUUID() };
   articles.push(article);
   res.status(201).end();
+});
+
+app.delete("/articles", (req, res) => {
+  const ids = req.body;
+  console.log("ids: ", ids);
+  articles = articles.filter((a) => !ids.includes(a.id));
+  res.status(204).end();
 });
 
 module.exports = app;

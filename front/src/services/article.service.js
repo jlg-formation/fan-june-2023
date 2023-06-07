@@ -25,6 +25,9 @@ export var ArticleService = [
       return $http
         .delete("http://localhost:3000/api/articles", {
           data: ids,
+          headers: {
+            "Content-Type": "application/json",
+          },
         })
         .then((response) => {
           console.log("response: ", response);
