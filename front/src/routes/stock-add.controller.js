@@ -10,9 +10,9 @@ export const StockAddCtrl = [
 
     $scope.isAdding = false;
 
-    $scope.name = "truc";
+    $scope.name = "";
     $scope.price = 0;
-    $scope.qty = 1;
+    $scope.qty = 0;
 
     $scope.submit = function () {
       $scope.isAdding = true;
